@@ -116,7 +116,7 @@ def start_log():
         "COMET",
         f"Server started on http://{settings.FASTAPI_HOST}:{settings.FASTAPI_PORT} - {settings.FASTAPI_WORKERS} workers",
     )
-	logger.log(
+    logger.log(
         "COMET",
         f"Root path is {settings.FASTAPI_ROOT_PATH}",
     )
