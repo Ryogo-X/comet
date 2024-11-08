@@ -50,6 +50,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
     redoc_url=None,
+    root_path=settings.FASTAPI_ROOT_PATH,
 )
 
 app.add_middleware(LoguruMiddleware)

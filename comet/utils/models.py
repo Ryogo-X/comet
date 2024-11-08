@@ -17,6 +17,7 @@ class AppSettings(BaseSettings):
     FASTAPI_HOST: Optional[str] = "0.0.0.0"
     FASTAPI_PORT: Optional[int] = 8000
     FASTAPI_WORKERS: Optional[int] = 2 * (os.cpu_count() or 1)
+    FASTAPI_ROOT_PATH: Optional[str] = "/"
     DASHBOARD_ADMIN_PASSWORD: Optional[str] = None
     DATABASE_TYPE: Optional[str] = "sqlite"
     DATABASE_URL: Optional[str] = "username:password@hostname:port"
