@@ -50,7 +50,6 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
     redoc_url=None,
-    root_path=settings.FASTAPI_ROOT_PATH,
 )
 
 app.add_middleware(LoguruMiddleware)
@@ -107,6 +106,7 @@ config = uvicorn.Config(
     forwarded_allow_ips="*",
     workers=settings.FASTAPI_WORKERS,
     log_config=None,
+    root_path=settings.FASTAPI_ROOT_PATH,
 )
 server = Server(config=config)
 
