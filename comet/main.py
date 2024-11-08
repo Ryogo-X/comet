@@ -116,6 +116,10 @@ def start_log():
         "COMET",
         f"Server started on http://{settings.FASTAPI_HOST}:{settings.FASTAPI_PORT} - {settings.FASTAPI_WORKERS} workers",
     )
+	logger.log(
+        "COMET",
+        f"Root path is {settings.FASTAPI_ROOT_PATH}",
+    )
     logger.log(
         "COMET",
         f"Dashboard Admin Password: {settings.DASHBOARD_ADMIN_PASSWORD} -  http://{settings.FASTAPI_HOST}:{settings.FASTAPI_PORT}/active-connections?password={settings.DASHBOARD_ADMIN_PASSWORD}",
