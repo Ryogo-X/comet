@@ -63,8 +63,8 @@ app.add_middleware(
 
 app.mount("/static", StaticFiles(directory="comet/templates"), name="static")
 
-app.include_router(main)
-app.include_router(streams)
+app.include_router(main, prefix=settings.FASTAPI_ROOT_PATH)
+app.include_router(streams, prefix=settings.FASTAPI_ROOT_PATH)
 
 
 class Server(uvicorn.Server):
@@ -106,7 +106,6 @@ config = uvicorn.Config(
     forwarded_allow_ips="*",
     workers=settings.FASTAPI_WORKERS,
     log_config=None,
-    root_path=settings.FASTAPI_ROOT_PATH,
 )
 server = Server(config=config)
 
